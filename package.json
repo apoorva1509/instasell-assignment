@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.17.5"
+  },
   "scripts": {
     "develop": "webpack-dev-server",
     "start": "node server.js",
