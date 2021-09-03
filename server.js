@@ -3,7 +3,6 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
 
 app.get("/", function (req, res) {
   const filePath = path.resolve(__dirname, "./public", "index.html");
@@ -88,4 +87,6 @@ app.get("*", function (req, res) {
   });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
